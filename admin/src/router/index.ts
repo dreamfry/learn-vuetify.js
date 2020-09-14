@@ -1,19 +1,65 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter, { RouteConfig } from "vue-router";
+import Home from "../views/Home.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-  const routes = [
+const routes: RouteConfig[] = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    component: Home,
+    children: [
+    ],
   },
-]
+  {
+    path: "/demo/Baseline",
+    name: "baseline",
+    component: () => import("../views/demos/Baseline.vue"),
+  },
+  {
+    path: "/demo/BaselineFlipped",
+    name: "baseline-flipped",
+    component: () => import("../views/demos/BaselineFlipped.vue"),
+  },
+  {
+    path: "/demo/Centered",
+    name: "centered",
+    component: () => import("../views/demos/Centered.vue"),
+  },
+  {
+    path: "/demo/Complex",
+    name: "complex",
+    component: () => import("../views/demos/Complex.vue"),
+  },
+  {
+    path: "/demo/Dark",
+    name: "dark",
+    component: () => import("../views/demos/Dark.vue"),
+  },
+  {
+    path: "/demo/GoogleContacts",
+    name: "google-contacts",
+    component: () => import("../views/demos/GoogleContacts.vue"),
+  },
+  {
+    path: "/demo/GoogleKeep",
+    name: "google-keep",
+    component: () => import("../views/demos/GoogleKeep.vue"),
+  },
+  {
+    path: "/demo/GoogleYoutube",
+    name: "google-youtube",
+    component: () => import("../views/demos/GoogleYoutube.vue"),
+  },
+  {
+    path: "/demo/Sandbox",
+    name: "sandbox",
+    component: () => import("../views/demos/Sandbox.vue"),
+  },
+];
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
