@@ -2,11 +2,17 @@
   <v-app>
     <v-navigation-drawer app width="180px" floating permanent>
       <v-list dense>
-        <v-list-item v-for="(item, i) in items" :key="i" :to="item.link" target="_blank">
-          <v-list-item-content>
-            <v-list-item-title>{{item.text}}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <v-list-group value="true">
+          <template v-slot:activator>
+            <v-list-item-title>demos</v-list-item-title>
+          </template>
+
+          <v-list-item v-for="(item, i) in items" :key="i" :to="item.link" target="_blank">
+            <v-list-item-content>
+              <v-list-item-title>{{item.text}}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-group>
       </v-list>
     </v-navigation-drawer>
     <v-main>
@@ -33,5 +39,4 @@ export default class Home extends Vue {
 }
 </script>
 <style>
-
 </style>
