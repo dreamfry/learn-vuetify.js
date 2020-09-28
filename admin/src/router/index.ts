@@ -9,6 +9,21 @@ const routes: RouteConfig[] = [
     path: "/",
     component: Home,
     children: [
+      {
+        path: "/mydemo/icon",
+        name: "icon",
+        component: () => import("../views/mydemos/Icon.vue"),
+      },
+      {
+        path: "/mydemo/menu",
+        name: "menu",
+        component: () => import("../views/mydemos/Menu.vue"),
+      },
+      {
+        path: "/mydemo/card",
+        name: "card",
+        component: () => import("../views/mydemos/Card.vue"),
+      },
     ],
   },
   {
